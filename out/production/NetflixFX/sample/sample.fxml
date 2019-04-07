@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <tabs>
+    <Tab text="Product List">
+         <content>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="187.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="425.0" minWidth="10.0" prefWidth="187.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="558.0" minWidth="10.0" prefWidth="187.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="628.0" minWidth="10.0" prefWidth="187.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="304.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="582.0" minHeight="10.0" prefHeight="451.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="582.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ListView fx:id="listProd" onMouseClicked="#clickListProduct" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                      <opaqueInsets>
+                          <Insets />
+                      </opaqueInsets>
+                      <GridPane.margin>
+                          <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+                      </GridPane.margin>
+                  </ListView>
+                   <ListView fx:id="listDist" onMouseClicked="#clickListDistributor" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                       <opaqueInsets>
+                           <Insets />
+                       </opaqueInsets>
+                       <GridPane.margin>
+                           <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+                       </GridPane.margin>
+                   </ListView>
+                   <ListView fx:id="listUser" onMouseClicked="#clickListUser" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                       <opaqueInsets>
+                           <Insets />
+                       </opaqueInsets>
+                       <GridPane.margin>
+                           <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+                       </GridPane.margin>
+                   </ListView>
+                   <ListView fx:id="listSub" onMouseClicked="#clickListSubscribtion" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+                     </GridPane.margin>
+                  </ListView>
+                  <Button mnemonicParsing="false" onAction="#makeObjLists" text="Refresh List">
+                     <GridPane.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </GridPane.margin></Button>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#deleteProduct" text="Remove Product" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="10.0" top="32.0" />
+                     </GridPane.margin>
+                  </Button>
+                   <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#deleteDistributor" text="Remove Distirbutor" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                       <GridPane.margin>
+                           <Insets left="10.0" />
+                       </GridPane.margin>
+                   </Button>
+                   <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#deleteUser" text="Remove User" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                       <GridPane.margin>
+                           <Insets left="10.0" />
+                       </GridPane.margin>
+                   </Button>
+                   <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#changePriceSubscribtion" text="Change price" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                       <GridPane.margin>
+                           <Insets right="10.0" />
+                       </GridPane.margin>
+                   </Button>
+                  <TextField fx:id="priceSub" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefHeight="27.0" prefWidth="60.0" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></TextField>
+                  <Button alignment="TOP_LEFT" layoutX="650.0" layoutY="534.0" mnemonicParsing="false" onAction="#changePriceProduct" text="Change price" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <TextField fx:id="priceProd" alignment="CENTER_RIGHT" layoutX="583.0" layoutY="534.0" maxWidth="-Infinity" prefHeight="27.0" prefWidth="60.0" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Select object here -&gt; Go Object Details" GridPane.valignment="TOP">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="2.0" />
+                     </GridPane.margin></Label>
+                  <Label text="Product List" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Distributor List" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label layoutX="208.0" layoutY="85.0" text="User List" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label layoutX="396.0" layoutY="85.0" text="Subscription List" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Button layoutX="20.0" layoutY="44.0" mnemonicParsing="false" onAction="#stopProgram" text="Finish Program" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+                     <GridPane.margin>
+                        <Insets right="10.0" top="20.0" />
+                     </GridPane.margin></Button>
+                  <Button layoutX="620.0" layoutY="44.0" mnemonicParsing="false" onAction="#makeSerialization" text="Make Serialization" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+                     <GridPane.margin>
+                        <Insets right="10.0" top="20.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </content></Tab>
+    <Tab text="Object Details">
+        <content>
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="54.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="558.0" minWidth="10.0" prefWidth="134.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="628.0" minWidth="10.0" prefWidth="362.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="628.0" minWidth="10.0" prefWidth="206.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="304.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="582.0" minHeight="10.0" prefHeight="539.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                  <Label fx:id="info" alignment="CENTER" contentDisplay="TOP" text="Choose one object from list" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="30.0" top="30.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="findText" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets top="30.0" />
+                     </GridPane.margin>
+                  </TextField>
+                    <ListView fx:id="listTitle" onMouseClicked="#click" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                        <GridPane.margin>
+                            <Insets bottom="10.0" top="30.0" />
+                        </GridPane.margin>
+                    </ListView>
+                    <Button mnemonicParsing="false" onAction="#find" text="Find Product" GridPane.columnIndex="2">
+                        <GridPane.margin>
+                            <Insets top="30.0" />
+                        </GridPane.margin></Button>
+                    <Button mnemonicParsing="false" onAction="#chartSetUp" text="Show Chart" GridPane.columnIndex="2">
+                        <GridPane.margin>
+                            <Insets left="100.0" top="30.0" />
+                        </GridPane.margin></Button>
+                  <Label text="Search by title or actor" GridPane.columnIndex="2">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="picture" fitHeight="503.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="30.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                </children>
+            </GridPane>
+        </content></Tab>
+      <Tab text="Create Movie">
+         <content>
+             <GridPane prefHeight="616.0" prefWidth="750.0">
+                 <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="138.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.0" minWidth="10.0" prefWidth="265.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="196.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                 </columnConstraints>
+                 <rowConstraints>
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                 </rowConstraints>
+                 <children>
+                  <ChoiceBox fx:id="movieDistributor" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <Label fx:id="movie1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     <Label fx:id="movie2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                     <Label fx:id="movie3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                     <Label fx:id="movie4" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                     <Label fx:id="movie5" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                     <Label fx:id="movie6" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                     <Label fx:id="movie7" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                     <Label fx:id="movie8" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                     <Label fx:id="movie9" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                     <Label fx:id="movie10" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                     <Label fx:id="movie11" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                     <Label fx:id="movie12" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                     <Label fx:id="movie13" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+                     <Label fx:id="movie14" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+
+                     <TextField fx:id="movieTitle" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Title" GridPane.rowIndex="1">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <TextField fx:id="movieDescription" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Description" GridPane.rowIndex="2">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <TextField fx:id="movieDuration" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Duration" GridPane.rowIndex="3">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Distributor" GridPane.rowIndex="4">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Country" GridPane.rowIndex="5">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <TextField fx:id="movieScore" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Score" GridPane.rowIndex="6">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <TextField fx:id="movieDateProd" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Date production" GridPane.rowIndex="7">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <TextField fx:id="movieType" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Type" GridPane.rowIndex="8">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Actors" GridPane.rowIndex="9">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <TextField fx:id="movieURL" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="URL link" GridPane.rowIndex="10">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <TextField fx:id="moviePrice" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Price" GridPane.rowIndex="11">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                     <TextField fx:id="movieDateRelease" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                     <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Date release" GridPane.rowIndex="12">
+                         <GridPane.margin>
+                             <Insets right="20.0" />
+                         </GridPane.margin>
+                     </Label>
+                  <Button mnemonicParsing="false" onAction="#createMovie" text="Create Movie" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="movieCountry0" />
+                        <TextField fx:id="movieCountry1" GridPane.columnIndex="1" />
+                        <TextField fx:id="movieCountry2" GridPane.columnIndex="2" />
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="9">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="movieActor0" />
+                        <TextField fx:id="movieActor1" GridPane.columnIndex="1" />
+                        <TextField fx:id="movieActor2" GridPane.columnIndex="2" />
+                     </children>
+                  </GridPane>
+                  <Button mnemonicParsing="false" onAction="#createRandomMovie" text="Random Movie" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+
+
+
+                 </children>
+             </GridPane>
+         </content></Tab>
+      <Tab text="Create Series">
+          <content>
+              <GridPane prefHeight="616.0" prefWidth="750.0">
+                  <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="138.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.0" minWidth="10.0" prefWidth="265.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="30.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="196.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <children>
+                      <Label fx:id="series1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                      <Label fx:id="series2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                      <Label fx:id="series3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                      <Label fx:id="series4" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                      <Label fx:id="series5" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                      <Label fx:id="series6" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                      <Label fx:id="series7" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                      <Label fx:id="series8" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                      <Label fx:id="series9" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                      <Label fx:id="series10" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                      <Label fx:id="series11" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                      <Label fx:id="series12" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                      <Label fx:id="series13" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+                      <Label fx:id="series14" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+                      <Label fx:id="series15" GridPane.columnIndex="3" GridPane.rowIndex="15" />
+                      <Label fx:id="series16" GridPane.columnIndex="3" GridPane.rowIndex="16" />
+
+                      <TextField fx:id="seriesTitle" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      <TextField fx:id="seriesDescription" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                      <TextField fx:id="seriesDuration" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                          <children>
+                              <TextField fx:id="seriesCountry0" />
+                              <TextField fx:id="seriesCountry1" GridPane.columnIndex="1" />
+                              <TextField fx:id="seriesCountry2" GridPane.columnIndex="2" />
+                          </children>
+                      </GridPane>
+                      <TextField fx:id="seriesScore" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                      <TextField fx:id="seriesDateProd" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                      <TextField fx:id="seriesType" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="9">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+
+                          </rowConstraints>
+                          <children>
+                              <TextField fx:id="seriesActor0" />
+                              <TextField fx:id="seriesActor1" GridPane.columnIndex="1" />
+                              <TextField fx:id="seriesActor2" GridPane.columnIndex="2" />
+                          </children>
+                      </GridPane>
+                      <TextField fx:id="seriesPrice" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                      <TextField fx:id="seriesSeasonNum" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <TextField fx:id="seriesEpisodeNum" layoutX="148.0" layoutY="427.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <TextField fx:id="seriesDateRelease" layoutX="148.0" layoutY="427.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <TextField fx:id="seriesFrequency" layoutX="148.0" layoutY="427.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Title" GridPane.rowIndex="1">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Description" GridPane.rowIndex="2">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Duration" GridPane.rowIndex="3">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Distributor" GridPane.rowIndex="4">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Country" GridPane.rowIndex="5">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Score" GridPane.rowIndex="6">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Date production" GridPane.rowIndex="7">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Type" GridPane.rowIndex="8">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Actors" GridPane.rowIndex="9">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Price" GridPane.rowIndex="10">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Season number" GridPane.rowIndex="11">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Button mnemonicParsing="false" onAction="#createSeries" text="Create Series" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                      <Button mnemonicParsing="false" onAction="#createRandomSeries" text="Random Series" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="432.0" maxWidth="1.7976931348623157E308" text="Episodes number" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets right="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="466.0" maxWidth="1.7976931348623157E308" text="Date release" GridPane.rowIndex="13">
+                     <GridPane.margin>
+                        <Insets right="20.0" />
+                     </GridPane.margin></Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="466.0" maxWidth="1.7976931348623157E308" text="Frequency episo." GridPane.rowIndex="14">
+                     <GridPane.margin>
+                        <Insets right="20.0" />
+                     </GridPane.margin></Label>
+                  <ChoiceBox fx:id="seriesDistributor" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+
+
+                  </children>
+              </GridPane>
+          </content></Tab>
+      <Tab text="Create LiveStream">
+          <content>
+              <GridPane prefHeight="616.0" prefWidth="750.0">
+                  <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="138.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.0" minWidth="10.0" prefWidth="265.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="30.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="196.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <children>
+                      <Label fx:id="live1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                      <Label fx:id="live2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                      <Label fx:id="live3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                      <Label fx:id="live4" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                      <Label fx:id="live5" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                      <Label fx:id="live6" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                      <Label fx:id="live7" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                      <Label fx:id="live8" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                      <Label fx:id="live9" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                      <Label fx:id="live10" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+
+                      <TextField fx:id="liveTitle" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      <TextField fx:id="liveDescription" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                      <TextField fx:id="liveDuration" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="liveCountry" layoutX="148.0" layoutY="154.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                      <TextField fx:id="liveScore" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                      <TextField fx:id="liveDate" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                      <TextField fx:id="livePrice" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Title" GridPane.rowIndex="1">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Description" GridPane.rowIndex="2">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Duration" GridPane.rowIndex="3">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Distributor" GridPane.rowIndex="4">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Country" GridPane.rowIndex="5">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Score" GridPane.rowIndex="6">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Date" GridPane.rowIndex="7">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Price" GridPane.rowIndex="8">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Button mnemonicParsing="false" onAction="#createLiveStream" text="Create LiveStream" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                      <Button mnemonicParsing="false" onAction="#createRandomLiveStream" text="Random LiveStream" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <ChoiceBox fx:id="liveDistributor" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+
+
+                  </children>
+              </GridPane>
+          </content></Tab>
+      <Tab text="Create Distributor">
+          <content>
+              <GridPane prefHeight="616.0" prefWidth="750.0">
+                  <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="138.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.0" minWidth="10.0" prefWidth="265.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="30.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="196.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <children>
+                      <Label fx:id="distributor1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                      <Label fx:id="distributor2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                      <Label fx:id="distributor3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                      <Label fx:id="distributor4" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                      <Label fx:id="distributor5" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                      <Label fx:id="distributor6" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+
+
+                      <TextField fx:id="distributorName" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      <TextField fx:id="distributorAccount" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                      <TextField fx:id="distributorPerView" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                      <TextField fx:id="distributorPerMonth" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Name" GridPane.rowIndex="1">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Account Number" GridPane.rowIndex="2">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Pay per view" GridPane.rowIndex="3">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Pay per month" GridPane.rowIndex="4">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Button mnemonicParsing="false" onAction="#createDistributor" text="Create Distributor" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                      <Button mnemonicParsing="false" onAction="#createRandomDistributor" text="Random Distributor" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+
+
+                  </children>
+              </GridPane>
+          </content></Tab>
+
+      <Tab text="Create User">
+          <content>
+              <GridPane prefHeight="616.0" prefWidth="750.0">
+                  <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="138.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.0" minWidth="10.0" prefWidth="265.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="30.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="196.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <children>
+                      <Label fx:id="user1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                      <Label fx:id="user2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                      <Label fx:id="user3" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                      <Label fx:id="user4" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                      <Label fx:id="user5" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                      <Label fx:id="user6" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                      <Label fx:id="user7" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                      <Label fx:id="user8" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+
+                      <TextField fx:id="userName" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      <TextField fx:id="userSurname" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                      <TextField fx:id="userBirth" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                      <TextField fx:id="userEmail" layoutX="169.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                      <TextField fx:id="userCardNum" layoutX="148.0" layoutY="154.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="userSubscription" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Name" GridPane.rowIndex="1">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Surname" GridPane.rowIndex="2">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Birth date" GridPane.rowIndex="3">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Email" GridPane.rowIndex="4">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Credit Card Num." GridPane.rowIndex="5">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="60.0" maxWidth="1.7976931348623157E308" text="Subscription" GridPane.rowIndex="6">
+                          <GridPane.margin>
+                              <Insets right="20.0" />
+                          </GridPane.margin>
+                      </Label>
+                      <Button mnemonicParsing="false" onAction="#createUser" text="Create User" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                      <Button mnemonicParsing="false" onAction="#createRandomUser" text="Random User" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+
+
+                  </children>
+              </GridPane>
+          </content></Tab>
+  </tabs>
+</TabPane>
